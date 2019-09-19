@@ -11,7 +11,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 
 import { PatientAddComponent } from './patient-add/patient-add.component';
 
-import { FirstNamePipe } from './pipes/filter.pipe';
+import { FirstNamePipe, PatientSearch } from './pipes/filter.pipe';
 import { FormsModule }   from '@angular/forms';
 
 
@@ -23,7 +23,8 @@ import { FormsModule }   from '@angular/forms';
     PatientAllComponent,
     SignInComponent,
     PatientAddComponent,
-    FirstNamePipe
+    FirstNamePipe,
+    PatientSearch
 
   ],
   imports: [
