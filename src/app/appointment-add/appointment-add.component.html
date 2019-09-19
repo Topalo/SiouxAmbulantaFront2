@@ -1,6 +1,5 @@
-
-<form>
-    <h2>{{item?.patient?.firstname}} {{item?.patient?.lastname}} ({{item?.patient?.jmbg}})</h2>
+<form ngNativeValidate #ngForm="ngForm" (ngSubmit)="saveAppointment()">
+    <h2>Patient: {{item?.patient?.firstname}} {{item?.patient?.lastname}} ({{item?.patient?.jmbg}})</h2>
     <label>Date: </label>
     <input type="date"><br>
     <label>Time: </label>

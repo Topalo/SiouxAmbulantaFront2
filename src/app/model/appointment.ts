@@ -1,10 +1,11 @@
 import { Patient } from './patient';
+import { Doctor } from './doctor';
 
 export class Appointment implements AppointmentInterface {
     id: number;
     date: string;
     patient: Patient;
-    doctor: number;
+    doctor: Doctor;
 
     constructor(appointment: AppointmentInterface) {
         this.id = appointment.id;
@@ -20,5 +21,5 @@ interface AppointmentInterface {
     id: number;
     date: string;
     patient: Patient;
-    doctor: number;
+    doctor: Doctor;
 }
