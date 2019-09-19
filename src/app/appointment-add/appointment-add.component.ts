@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Patient } from '../model/patient';
 import { Appointment } from '../model/appointment';
 import { AppointmentService } from '../service/appointment.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-appointment-add',
@@ -17,8 +18,11 @@ username:'', password:'', email:'', specialization:''}};
   date: string = "";
   time: string = "";
 
-  
-  constructor(private service: AppointmentService) { }
+
+  constructor(private service: AppointmentService, private _Activatedroute:ActivatedRoute) {
+
+    console.log(this._Activatedroute.snapshot.paramMap.get("id"));
+   }
 
   ngOnInit() {
   }
