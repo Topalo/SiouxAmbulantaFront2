@@ -11,7 +11,7 @@ export class PatientService {
   constructor(private client: HttpClient) { }
 
   public getPatients(): Observable<Patient[]>{
-    return this.client.get<Patient[]>("http://localhost8080/api/patients")
+    return this.client.get<Patient[]>("http://localhost:8080/api/patients")
   }
 
 }
