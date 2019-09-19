@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalenderComponent } from './calender/calender.component';
@@ -21,6 +22,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FullCalendarModule
   ],
   providers: [],
