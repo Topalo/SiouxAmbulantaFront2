@@ -18,5 +18,8 @@ export class PatientService {
     return this.client.post<Patient>("http://localhost:8080/api/patients", patient);
   }
 
+  public getPatient(id: string): Observable<Patient> {
+    return this.client.get<Patient>("http://localhost:8080/api/patients/" + id);
+  }
 
 }

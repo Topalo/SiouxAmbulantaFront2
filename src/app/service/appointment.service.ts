@@ -9,6 +9,9 @@ import { Appointment } from '../model/appointment';
   providedIn: 'root'
 })
 export class AppointmentService {
+  getPatient(id: string) {
+    throw new Error("Method not implemented.");
+  }
   savePatient(item: Appointment) {
     throw new Error("Method not implemented.");
   }
