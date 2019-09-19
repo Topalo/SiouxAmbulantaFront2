@@ -1,28 +1,31 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AppointmentService } from '../service/appointment.service';
 import { Appointment } from '../model/appointment';
 import { Page } from '../model/page';
+import { PatientService } from '../service/patient.service';
+import { Patient } from '../model/patient';
 
 
 @Component({
   selector: 'app-patient-list',
   templateUrl: './patient-list.component.html',
   styleUrls: ['./patient-list.component.sass'],
-  providers: [AppointmentService]
+  providers: [AppointmentService, PatientService]
 })
 export class PatientListComponent implements OnInit {
   
- 
+  
   items: Appointment[];
+  
 
-  constructor(private service: AppointmentService) {
+  constructor(private service: AppointmentService, private servicePatient: PatientService) {
 
-    this.loadStudents();
+    this.loadAppointments();
 
   }
 
-  loadStudents() {
+  loadAppointments() {
     this.service.getAppointments(1).subscribe(
       (res: Page<Appointment>) => {
         this.items = res.items;
@@ -33,10 +36,9 @@ export class PatientListComponent implements OnInit {
   ngOnInit() {
   }
 
-  delete(){
-
-  }
-  edit(){
-    
-  }
+  delete(id: number){
+      this.servicePatient.deletePatient(id).subscribe(
+         
+      );
+    }
 }
