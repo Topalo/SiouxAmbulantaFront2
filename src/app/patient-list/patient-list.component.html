@@ -12,8 +12,8 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of items; let i = index">
-        <td>{{i}}</td>
+        <tr *ngFor="let item of items; let i = index+1">
+        <td>{{i}}.</td>
         <td>{{item.date}}</td>
         <td>{{item.patient.firstname}}</td>
         <td>{{item.patient.lastname}}</td>
