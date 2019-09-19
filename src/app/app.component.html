@@ -17,9 +17,14 @@
                 <a class="nav-link" routerLink="/patient-all">Zakazivanje</a>
             </li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" *ngIf="token == null">
             <li class="nav-item">
                 <a class="nav-link" routerLink="/sign-in">Login</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav" *ngIf="token != null">
+            <li class="nav-item">
+                <a class="nav-link" (click)="logout()" routerLink="/">Logout</a>
             </li>
         </ul>
     </div>

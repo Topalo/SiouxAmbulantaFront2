@@ -1,1 +1,15 @@
-<p>sign-in works!</p>
+<div class="container">
+    <form ngNativeValidate #ngForm="ngForm" (ngSubmit)="login()">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Enter username"
+                [(ngModel)]="item.username" required>
+        </div>
+        <div class="form-group">
+            <label>Last name</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter password"
+                [(ngModel)]="item.password" required>
+        </div>
+        <button type="submit" class="btn btn-success">Sign in</button>
+    </form>
+</div>
