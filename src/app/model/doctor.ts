@@ -5,5 +5,5 @@ export interface Doctore{
     firstname: string,
     lastname:string,
     email:string,
-    specialization: Specialization 
+    specialization: string
 }
