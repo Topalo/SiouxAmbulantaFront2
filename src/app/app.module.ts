@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FullCalendarModule } from '@fullcalendar/angular';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,8 +21,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FullCalendarModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,10 +10,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of items">
-        <td>{{item.termin}}</td>
-        <td>{{item.firstname}}</td>
-        <td>{{item.lastname}}</td>
-        <td>{{item.jmbg}}</td>
+        <td>{{item.date}}</td>
+        <td>{{item.patient.firstname}}</td>
+        <td>{{item.patient.lastname}}</td>
+        <td>{{item.patient.jmbg}}</td>
       </tr>
     </tbody>
   </table>
