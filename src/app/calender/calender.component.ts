@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
 
 @Component({
   selector: 'app-calender',
