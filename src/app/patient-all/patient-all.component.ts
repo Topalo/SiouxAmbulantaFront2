@@ -25,7 +25,7 @@ export class PatientAllComponent implements OnInit {
   me() {
     this.authService.me().subscribe(
       (res: Doctor) => {
-        localStorage.setItem("id", res.id.toString());
+        console.log(res);
         localStorage.setItem("username", res.username);
       }
     );

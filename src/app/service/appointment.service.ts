@@ -19,7 +19,7 @@ export class AppointmentService {
   constructor(private client: HttpClient) { }
 
   public getAppointments(doctorId: number): Observable<Page<Appointment>> {
-    return this.client.get<Page<Appointment>>(`http://localhost:8080/api/appointments/pages/doctor/${doctorId}?page=0&size=50`);
+    return this.client.get<Page<Appointment>>(`http://localhost:8080/api/appointments/pages/doctor/${doctorId}?page=0&size=100`);
   }
 
   public saveAppointment(appointment: Appointment): Observable<Appointment> {
