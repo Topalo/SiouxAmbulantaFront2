@@ -13,8 +13,9 @@ export class PatientService {
   public getPatients(): Observable<Patient[]>{
     return this.client.get<Patient[]>("http://localhost:8080/api/patients")
   }
-  public savePatient(): Observable<Patient>{
-    return this.client.post<Patient>("http://localhost:8080/api/patients");
+  public savePatient(patient: Patient): Observable<Patient>{
+    console.log(JSON.stringify(patient));
+    return this.client.post<Patient>("http://localhost:8080/api/patients", JSON.stringify(patient));
   }
 
 }
