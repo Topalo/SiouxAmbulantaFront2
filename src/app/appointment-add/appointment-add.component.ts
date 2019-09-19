@@ -55,7 +55,7 @@ export class AppointmentAddComponent implements OnInit {
 
   public saveAppointment() {
     this.item.doctor.username = localStorage.getItem("username");
-    this.item.date = this.date + " " + this.time + ":00";
+    this.item.date = this.date + 'T' + this.time + ':00';
     this.service.saveAppointment(this.item).subscribe(
       (data) => {
         console.log(data);

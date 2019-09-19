@@ -9,6 +9,7 @@ import { AuthService } from './service/auth.service';
 export class AppComponent {
   title = 'sioux-ambulanta';
 
+  loggedUser: string = localStorage.getItem("username");
   token: string = localStorage.getItem("token");
 
   constructor() { }
@@ -17,4 +18,5 @@ export class AppComponent {
     localStorage.clear();
     this.token = null;
   }
+
 }
