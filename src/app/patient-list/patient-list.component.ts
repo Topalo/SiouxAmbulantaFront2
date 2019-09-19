@@ -15,6 +15,8 @@ export class PatientListComponent implements OnInit {
   
  
   items: Appointment[];
+  item: Appointment;
+  itemsWithDate: Appointment[]=[];
 
   constructor(private service: AppointmentService) {
 
@@ -29,6 +31,15 @@ export class PatientListComponent implements OnInit {
       }
     );
   }
+
+  // get sortData() {
+  //   return this.item.date.sort((a, b) => {
+  //     return <any>new Date(b.item.date) - <any>new Date(a.item.date);
+  //   });
+  // }
+
+
+
 
   ngOnInit() {
   }

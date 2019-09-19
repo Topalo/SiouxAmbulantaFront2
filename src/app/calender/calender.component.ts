@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AppointmentService } from '../service/appointment.service';
 
 @Component({
   selector: 'app-calender',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalenderComponent implements OnInit {
 
-  constructor() { }
+  @Input("appointment")
+
+  date: string="";
+
+  constructor(private appointemntService:AppointmentService) { }
 
   ngOnInit() {
   }
 
+  
 }

@@ -14,6 +14,7 @@ import { PatientAddComponent } from './patient-add/patient-add.component';
 import { FirstNamePipe, PatientSearch } from './pipes/filter.pipe';
 import { FormsModule }   from '@angular/forms';
 import { AppointmentAddComponent } from './appointment-add/appointment-add.component';
+import { CalendarDetailsComponent } from './calendar-details/calendar-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AppointmentAddComponent } from './appointment-add/appointment-add.compo
     PatientAddComponent,
     FirstNamePipe,
     PatientSearch,
-    AppointmentAddComponent
+    AppointmentAddComponent,
+    CalendarDetailsComponent
 
   ],
   imports: [
