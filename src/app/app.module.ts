@@ -13,6 +13,7 @@ import { PatientAddComponent } from './patient-add/patient-add.component';
 
 import { FirstNamePipe } from './pipes/filter.pipe';
 import { FormsModule }   from '@angular/forms';
+import { AppointmentAddComponent } from './appointment-add/appointment-add.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormsModule }   from '@angular/forms';
     PatientAllComponent,
     SignInComponent,
     PatientAddComponent,
-    FirstNamePipe
+    FirstNamePipe,
+    AppointmentAddComponent
 
   ],
   imports: [
