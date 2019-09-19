@@ -1,9 +1,7 @@
-<form ngNativeValidate #ngForm="ngForm" (ngSubmit)="saveAppointment()">
+
     <h2>Patient: {{item?.patient?.firstname}} {{item?.patient?.lastname}} ({{item?.patient?.jmbg}})</h2>
     <label>Date: </label>
-    <input type="date"><br>
+    <input class="m-2" type="date" [(ngModel)]="date" required><br>
     <label>Time: </label>
-    <input type="time"><br>
-    <button type="submit" class="btn btn-success m-2">Save</button>
-</form>
-
+    <input class="m-2" type="time" [(ngModel)]="time" required><br>
+    <button type="submit" (click) ="saveAppointment()"class="btn btn-success m-2">Save</button>
