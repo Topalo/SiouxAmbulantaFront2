@@ -33,5 +33,10 @@ export class PatientListComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+  delete(){
+
+  }
+  edit(){
+    
+  }
 }

@@ -14,7 +14,7 @@ import { PatientListComponent } from '../patient-list/patient-list.component';
 export class AppointmentAddComponent implements OnInit {
 
   @Input("item")
-  item: Appointment = {id: null, date:'', patient:{id:null, firstname:'',lastname:'',jmbg:''}, doctor:{id:1, firstname:'',lastname:'',
+  item: Appointment = {id: null, date:'', patient:{id:1, firstname:'',lastname:'',jmbg:''}, doctor:{id:1, firstname:'',lastname:'',
 username:'', password:'', email:'', specialization:''}};
 
   date: string = "";
@@ -38,7 +38,7 @@ username:'', password:'', email:'', specialization:''}};
   }  
 
   public clearForm() {
-    this.item = {id: null, date:'', patient:{id:null, firstname:'',lastname:'',jmbg:''}, doctor:{id:1, firstname:'',lastname:'',
+    this.item = {id: null, date:'', patient:{id:null, firstname:'',lastname:'',jmbg:''}, doctor:{id:null, firstname:'',lastname:'',
     username:'', password:'', email:'', specialization:''}};
   }
 

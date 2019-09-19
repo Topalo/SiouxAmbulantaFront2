@@ -16,7 +16,7 @@ export class FirstNamePipe implements PipeTransform {
   
 
 @Pipe({name: 'filter'})
-export class FilterPipe implements PipeTransform{
+export class PatientSearch implements PipeTransform{
     transform(patients: Patient[], searchLName: string, searchFName: string): any[] {
     if(patients && patients.length){
         return patients.filter(p => {
