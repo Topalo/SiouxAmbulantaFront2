@@ -26,7 +26,7 @@ export class SignInComponent implements OnInit {
   public me() {
     this.service.me().subscribe(
       (res: Doctor) => {
-        //localStorage.setItem("id", res.id);
+        localStorage.setItem("id", res.id.toString());
         localStorage.setItem("username", res.username);
       }
     );
