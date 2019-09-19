@@ -1,0 +1,17 @@
+<div class="container">
+<form ngNativeValidate (ngSubmit)="savePatient()">
+    <div class="form-group">
+      <label>First name</label>
+      <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter first name" [(ngModel)]="item.firstname" required>
+    </div>
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter last name" [(ngModel)]="item.lastname" required>
+    </div>
+    <div class="form-group">
+        <label>Jmbg</label>
+        <input type="text" class="form-control" name="jmbg" id="jmbg" placeholder="Enter jmbg"  [(ngModel)]="item.jmbg" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Patient</button>
+  </form>
+</div>

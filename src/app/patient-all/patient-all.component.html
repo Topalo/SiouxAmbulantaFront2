@@ -1,5 +1,9 @@
 <div class="container">
-    <button class="btn btn-primary">Add Patient</button>
+  <div class="row justify-content-between">  
+
+    <input type="text" class="">
+    <button class="btn btn-primary m-3" routerLink="/patient-add">Add Patient</button>
+  </div>
         <table class="table">
           <thead class="thead-dark">
             <tr>
@@ -14,7 +18,7 @@
             <td>{{item.firstname}}</td>
             <td>{{item.lastname}}</td>
             <td>{{item.jmbg}}</td>
-            <button class="btn btn-success">New Appointment</button>
+            <button class="btn btn-success m-1">New Appointment</button>
             </tr>
           </tbody>
         </table>
