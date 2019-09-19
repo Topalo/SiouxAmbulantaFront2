@@ -1,4 +1,4 @@
-export interface Doctore{
+export interface Doctor{
     id: number,
     username: string,
     password: string,
