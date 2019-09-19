@@ -1,10 +1,16 @@
 <div class="container">
-
   <div class="row justify-content-between">
-      <input [(ngModel)]="searchFName" class="m-2" placeholder="search text goes here">  
-      <button class="btn btn-primary m-2" routerLink="/patient-add">Add Patient</button>
+      <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">First and last name</span>
+          </div>
+          <input [(ngModel)]="searchFName" class="form-control" placeholder="first name goes here"
+                 type="text" aria-label="First name">
+          <input [(ngModel)]="searchLName" class="form-control" placeholder="first name goes here"
+                type="text" aria-label="Last name" class="form-control">
+        </div>
+      <button class="btn btn-primary m-2">Add Patient</button>
   </div>     
-
         <table class="table">
           <thead class="thead-dark">
             <tr>
@@ -15,11 +21,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of items | filterFirstName : searchFName">
+            <tr *ngFor="let item of items | filterFirstName : searchFName ">
             <td>{{item.firstname}}</td>
             <td>{{item.lastname}}</td>
             <td>{{item.jmbg}}</td>
-            <button class="btn btn-success m-1">New Appointment</button>
+            <button class="btn btn-success">New Appointment</button>
             </tr>
           </tbody>
         </table>
