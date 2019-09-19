@@ -14,6 +14,10 @@ export class AppointmentAddComponent implements OnInit {
   item: Appointment = {id: null, date:'', patient:{id:null, firstname:'',lastname:'',jmbg:''}, doctor:{id:1, firstname:'',lastname:'',
 username:'', password:'', email:'', specialization:''}};
 
+  date: string = "";
+  time: string = "";
+
+  
   constructor(private service: AppointmentService) { }
 
   ngOnInit() {
@@ -25,6 +29,8 @@ username:'', password:'', email:'', specialization:''}};
   }
 
   public saveAppointment() {
+
+    this.item.date = this.date + " " + this.time;
     this.service.saveAppointment(this.item).subscribe(
       (data) => {
         console.log(data);
