@@ -14,7 +14,7 @@ export class PatientService {
     return this.client.get<Patient[]>("http://localhost:8080/api/patients")
   }
   public save(item: Patient) : Observable<Patient> {
-    var url = "http://localhost:8080/api/patient-add"
+    var url = "http://localhost:8080/api/patients"
     if(item.id) {
       url += `/${item.id}`;
       return this.client.put<Patient>(url, item);
