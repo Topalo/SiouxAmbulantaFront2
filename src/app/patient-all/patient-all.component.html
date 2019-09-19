@@ -2,11 +2,11 @@
   <div class="row justify-content-between">
       <div class="input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text">First and last name</span>
+            <span class="input-group-text">Search</span>
           </div>
           <input [(ngModel)]="searchFName" class="form-control" placeholder="first name goes here"
                  type="text" aria-label="First name">
-          <input [(ngModel)]="searchLName" class="form-control" placeholder="first name goes here"
+          <input [(ngModel)]="searchLName" class="form-control" placeholder="last name goes here"
                 type="text" aria-label="Last name" class="form-control">
         </div>
       <button class="btn btn-primary m-2" routerLink = "/patient-add">Add Patient</button>
@@ -21,11 +21,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of items | filterFirstName : searchFName ">
+            <tr *ngFor="let item of items | filter : searchFName : searchLName ">
             <td>{{item.firstname}}</td>
             <td>{{item.lastname}}</td>
             <td>{{item.jmbg}}</td>
-            <button class="btn btn-success" ruterLink="/appointment-add">New Appointment</button>
+            <button class="btn btn-success" routerLink="/appointment-add/{{item.id}}">New Appointment</button>
             </tr>
           </tbody>
         </table>

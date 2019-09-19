@@ -9,6 +9,12 @@ import { Appointment } from '../model/appointment';
   providedIn: 'root'
 })
 export class AppointmentService {
+  getPatient(id: string) {
+    throw new Error("Method not implemented.");
+  }
+  savePatient(item: Appointment) {
+    throw new Error("Method not implemented.");
+  }
 
   constructor(private client: HttpClient) { }
 
@@ -16,4 +22,8 @@ export class AppointmentService {
     return this.client.get<Page<Appointment>>(`http://localhost:8080/api/appointments/pages/doctor/${doctorId}?page=0&size=50`);
   }
 
+  public saveAppointment(appointment: Appointment): Observable<Appointment> {
+    console.log(appointment);
+    return this.client.post<Appointment>(`http://localhost:8080/api/appointments`, appointment);
+  }
 }
