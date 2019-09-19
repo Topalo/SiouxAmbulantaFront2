@@ -1,9 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Patient } from '../model/patient';
 
-@Pipe({
-  name: 'filterFirstName'
-})
+@Pipe({ name: 'filterFirstName'})
 
 export class FirstNamePipe implements PipeTransform {
     transform(patients: Patient[], searchFName: string): any[] {
@@ -16,13 +14,15 @@ export class FirstNamePipe implements PipeTransform {
      }
   }
   
-//   @Pipe({name: 'filterLastName'})
-//   export class LastNamePipe implements PipeTransform{
-//       transform(students: any[], filterCardNumber:String): any[] {
-//           if(!students) return [];
-//           if(!filterCardNumber) return students;
-//           return students.filter( s => {
-//               return s.cardNumber.includes(filterCardNumber);
-//           });
-//       }
-//   }
+
+@Pipe({name: 'filterLastName'})
+export class LastNamePipe implements PipeTransform{
+    transform(patients: Patient[], searchLName: string): any[] {
+    if(!patients) return [];
+    if(!searchLName) return patients;
+    searchLName = searchLName.toLowerCase();
+    return patients.filter( p => {
+        return p.lastname.includes(searchLName);
+        });
+    }
+  }
