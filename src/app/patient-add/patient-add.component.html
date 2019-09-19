@@ -1,4 +1,4 @@
-<div class="container">
+
 <form ngNativeValidate (ngSubmit)="savePatient()">
     <div class="form-group">
       <label>First name</label>
@@ -12,6 +12,5 @@
         <label>Jmbg</label>
         <input type="text" class="form-control" name="jmbg" id="jmbg" placeholder="Enter jmbg"  [(ngModel)]="item.jmbg" required>
     </div>
-    <button type="submit" class="btn btn-primary">Add Patient</button>
+    <button type="submit" class="btn btn-primary" routerLink="/patient-all">Add Patient</button>
   </form>
-</div>
