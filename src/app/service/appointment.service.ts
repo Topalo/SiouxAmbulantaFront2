@@ -11,26 +11,9 @@ export class AppointmentService {
 
   constructor(private client: HttpClient) { }
 
-  public getVehiclePage(filter: string="", page: number | null = null) : Observable<Page<Patient>>{
-    var options = {parms: {}};
-    if(page !== null){
-      options["parms"]["page"] = ""+(page-1);
-    }
-    if(filter !== null){
-      options["parms"]["name"] = filter;
-    }
-    return this.client.get<Page<Patient>>("http://localhost:8080/api/vehicles");
-  }
-  public save(item: Patient) : Observable<Patient>{
-    var url = "http://localhost:8080/api/vehicles";
-    if(item.id){
-      url += `/${item.id}`;
-      return this.client.put<Patient>(url, item);
-    }else{
-      return this.client.post<Patient>(url,item);
-    }
-  }
-  public delete(id: number){
-    return this.client.delete(`http://localhost:8080/api/vehicles/${id}`);
+
+
+  public getAppointments(doctorId: number){
+    return this.client.get(`http://localhost:8080/api/appointments/pages/doctor/${doctorId}?page=0&size=50`);
   }
 }
