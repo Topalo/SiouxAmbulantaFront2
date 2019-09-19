@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Patient } from '../model/patient';
+import { PatientService } from '../service/patient.service';
 
 @Component({
   selector: 'app-patient-add',
@@ -11,11 +12,8 @@ export class PatientAddComponent implements OnInit {
   @Input("item")
   item: Patient = {id: null, firstname: '', lastname:'', jmbg:''};
 
-  @Output("onSave")
-  onSave: EventEmitter<Patient> = new EventEmitter<Patient>();
 
-
-  constructor() { }
+  constructor(private service:PatientService) { }
 
   ngOnInit() {
   }
@@ -25,7 +23,7 @@ export class PatientAddComponent implements OnInit {
   }
 
   public savePatient() {
-    this.onSave.next(this.item);
+    this.service.savePatient(this.item);
     this.clearForm();
   }
   
