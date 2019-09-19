@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-// import { FullCalendarModule } from '@fullcalendar/angular';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalenderComponent } from './calender/calender.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 import { PatientAllComponent } from './patient-all/patient-all.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { FirstNamePipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,12 +15,13 @@ import { SignInComponent } from './sign-in/sign-in.component';
     CalenderComponent,
     PatientListComponent,
     PatientAllComponent,
-    SignInComponent
+    SignInComponent,
+    FirstNamePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // FullCalendarModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
