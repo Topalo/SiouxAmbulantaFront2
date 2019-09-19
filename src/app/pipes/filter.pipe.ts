@@ -6,12 +6,12 @@ import { Patient } from '../model/patient';
 })
 
 export class FirstNamePipe implements PipeTransform {
-    transform(patients: Patient[], firstname: string): any[] {
+    transform(patients: Patient[], searchFName: string): any[] {
       if(!patients) return [];
-      if(!firstname) return patients;
-      firstname = firstname.toLowerCase();
+      if(!searchFName) return patients;
+      searchFName = searchFName.toLowerCase();
       return patients.filter( p => {
-        return p.firstname.toLowerCase().includes(firstname);
+        return p.firstname.toLowerCase().includes(searchFName);
       });
      }
   }
