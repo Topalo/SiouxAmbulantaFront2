@@ -14,6 +14,7 @@
         <table class="table">
           <thead class="thead-dark">
             <tr>
+              <th scope="col">#</th>
               <th scope="col">First name</th>
               <th scope="col">Last name</th>
               <th scope="col">Jmbg</th>
@@ -21,11 +22,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of items | filter : searchFName : searchLName ">
+            <tr *ngFor="let item of items | filter : searchFName : searchLName, let i = index+1">
+            <td>{{i}}.</td>
             <td>{{item.firstname}}</td>
             <td>{{item.lastname}}</td>
             <td>{{item.jmbg}}</td>
-            <button class="btn btn-success" routerLink="/appointment-add/{{item.id}}">New Appointment</button>
+            <button class="btn btn-success m-2" routerLink="/appointment-add/{{item.id}}">New Appointment</button>
             </tr>
           </tbody>
         </table>

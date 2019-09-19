@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sioux-ambulanta';
+
+
+  loggedUser:string = localStorage.getItem("username");
 }

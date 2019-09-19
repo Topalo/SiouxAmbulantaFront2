@@ -3,22 +3,27 @@
   <table class="table">
     <thead class="thead-dark">
       <tr>
+        <th scope="col">#</th>
         <th scope="col">Date</th>
         <th scope="col">First name</th>
         <th scope="col">Last name</th>
         <th scope="col">Jmbg</th>
-        <th scope="col">Edit / Delete </th>
+        <th scope="col">Delete </th>
       </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
             <tr *ngFor="let item of items" >
+=======
+        <tr *ngFor="let item of items; let i = index+1">
+        <td>{{i}}.</td>
+>>>>>>> 7bb38c14c07843ddedbd8c52efdc2e4139a1233d
         <td>{{item.date}}</td>
         <td>{{item.patient.firstname}}</td>
         <td>{{item.patient.lastname}}</td>
         <td>{{item.patient.jmbg}}</td>
         <td>
-            <button class="btn btn-primary m-2">Edit</button>
-            <button class="btn btn-primary m-2">Delete</button>
+            <button class="btn btn-danger m-2" (click)="delete(item.id)">Delete</button>
         </td>
       </tr>
     </tbody>

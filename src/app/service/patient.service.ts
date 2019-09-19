@@ -22,4 +22,8 @@ export class PatientService {
     return this.client.get<Patient>("http://localhost:8080/api/patients/" + id);
   }
 
+  public deletePatient(id: number): Observable<void>{
+    return this.client.delete<void>("http://localhost:8080/api/patients/" + id);
+  }
+
 }
