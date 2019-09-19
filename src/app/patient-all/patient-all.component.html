@@ -1,1 +1,20 @@
-<p>patient-all works!</p>
+<div class="container">
+    <button class="btn btn-primary">Add Patient</button>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Jmbg</th>
+              <th>Appointment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+            <td>{{item.firstname}}</td>
+            <td>{{item.lastname}}</td>
+            <td>{{item.jmbg}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
