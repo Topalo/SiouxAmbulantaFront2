@@ -4,13 +4,8 @@ import { Appointment } from '../model/appointment';
 import { AppointmentService } from '../service/appointment.service';
 import { ActivatedRoute } from '@angular/router';
 import { PatientService } from '../service/patient.service';
-import { PatientListComponent } from '../patient-list/patient-list.component';
 
-@Component({
-  selector: 'app-appointment-add',
-  templateUrl: './appointment-add.component.html',
-  styleUrls: ['./appointment-add.component.sass']
-})
+@Component({ selector: 'app-appointment-add', templateUrl: './appointment-add.component.html' })
 export class AppointmentAddComponent implements OnInit {
 
   @Input("item")
@@ -26,8 +21,6 @@ export class AppointmentAddComponent implements OnInit {
   patient: Patient = { id: null, firstname: '', lastname: '', jmbg: '' };
 
   constructor(private service: AppointmentService, private _Activatedroute: ActivatedRoute, private servicePatient: PatientService) {
-
-    //console.log(this._Activatedroute.snapshot.paramMap.get("id"));
     this.getPatient();
   }
 
@@ -37,7 +30,6 @@ export class AppointmentAddComponent implements OnInit {
   public getPatient() {
     this.servicePatient.getPatient(this._Activatedroute.snapshot.paramMap.get("id")).subscribe(
       (res: Patient) => {
-        console.log(res);
         this.patient = res;
         this.item.patient = res;
       }
@@ -54,13 +46,16 @@ export class AppointmentAddComponent implements OnInit {
   }
 
   public saveAppointment() {
+    this.item.patient.id = parseInt(this._Activatedroute.snapshot.paramMap.get("id"));
     this.item.doctor.username = localStorage.getItem("username");
     this.item.date = this.date + 'T' + this.time + ':00';
     this.service.saveAppointment(this.item).subscribe(
       (data) => {
+        console.log("save appointment");
         console.log(data);
       },
       (error) => {
+        console.log("save appointment");
         console.log(error);
       }
     );

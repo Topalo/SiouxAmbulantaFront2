@@ -1,7 +1,8 @@
-    
+<div class="container mid-margin-top">
     <h2>Patient: {{patient.firstname}} {{patient.lastname}} ({{patient.jmbg}})</h2>
     <label>Date: </label>
     <input class="m-2" type="date" [(ngModel)]="date" required><br>
     <label>Time: </label>
     <input class="m-2" type="time" [(ngModel)]="time" required><br>
-    <button type="submit" (click) ="saveAppointment()"class="btn btn-success m-2">Save</button>
+    <button type="submit" (click)="saveAppointment()" class="btn btn-success m-2">Save</button>
+</div>

@@ -4,8 +4,7 @@ import { PatientService } from '../service/patient.service';
 
 @Component({
   selector: 'app-patient-add',
-  templateUrl: './patient-add.component.html',
-  styleUrls: ['./patient-add.component.sass']
+  templateUrl: './patient-add.component.html'
 })
 export class PatientAddComponent implements OnInit {
 
@@ -25,9 +24,11 @@ export class PatientAddComponent implements OnInit {
   public savePatient() {
     this.service.savePatient(this.item).subscribe(
       (data) => {
+        console.log("save patient");
         console.log(data);
       },
       (error) => {
+        console.log("save patient error");
         console.log(error);
       }
     );

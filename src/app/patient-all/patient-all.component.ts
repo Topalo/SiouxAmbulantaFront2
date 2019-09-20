@@ -7,7 +7,6 @@ import { Doctor } from '../model/doctor';
 @Component({
   selector: 'app-patient-all',
   templateUrl: './patient-all.component.html',
-  styleUrls: ['./patient-all.component.sass'],
   providers: [PatientService, AuthService]
 })
 export class PatientAllComponent implements OnInit {
@@ -25,7 +24,6 @@ export class PatientAllComponent implements OnInit {
   me() {
     this.authService.me().subscribe(
       (res: Doctor) => {
-        console.log(res);
         localStorage.setItem("username", res.username);
       }
     );
