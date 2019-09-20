@@ -14,7 +14,5 @@ export class CalenderComponent implements OnInit {
   constructor(private appointemntService:AppointmentService) { }
 
   ngOnInit() {
-  }
-
-  
+  }  
 }

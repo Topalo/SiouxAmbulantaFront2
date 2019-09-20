@@ -13,6 +13,18 @@ export class FirstNamePipe implements PipeTransform {
       });
      }
   }
+
+  @Pipe({ name: 'filterLastName'})
+  export class LastNamePipe implements PipeTransform {
+    transform(patients: Patient[], searchLName: string): any[] {
+      if(!patients) return [];
+      if(!searchLName) return patients;
+      searchLName = searchLName.toLowerCase();
+      return patients.filter( p => {
+        return p.lastname.toLowerCase().includes(searchLName);
+      });
+     }
+  }
   
 
 @Pipe({name: 'filter'})
@@ -23,7 +35,7 @@ export class PatientSearch implements PipeTransform{
             if( searchFName && p.firstname.toLowerCase().indexOf(searchFName.toLowerCase()) === -1){
                 return false;
             }
-            if( searchLName && p.firstname.toLowerCase().indexOf(searchLName.toLowerCase()) === -1){
+            if( searchLName && p.lastname.toLowerCase().indexOf(searchLName.toLowerCase()) === -1){
                 return false;
             }
             return true;
