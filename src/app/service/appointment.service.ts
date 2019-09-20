@@ -9,6 +9,7 @@ import { Appointment } from '../model/appointment';
   providedIn: 'root'
 })
 export class AppointmentService {
+
   getPatient(id: string) {
     throw new Error("Method not implemented.");
   }
@@ -25,8 +26,5 @@ export class AppointmentService {
   public saveAppointment(appointment: Appointment): Observable<Appointment> {
     console.log(appointment);
     return this.client.post<Appointment>(`http://localhost:8080/api/appointments`, appointment);
-  }
-
-  
-
+  } 
 }
