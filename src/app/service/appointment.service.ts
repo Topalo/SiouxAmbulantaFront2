@@ -18,20 +18,15 @@ export class AppointmentService {
 
   constructor(private client: HttpClient) { }
 
-  public getAppointments(doctorUsername: string, page: string): Observable<Page<Appointment>> {
-    return this.client.get<Page<Appointment>>(`http://localhost:8080/api/appointments/pages/doctor/${doctorUsername}?page=${page}&size=5`, {
-      headers: {
-        "Authorization": `Bearer ${localStorage.getItem('token')}`
-      }
-    });
+  public getAppointments(doctorUSername: string, page: string): Observable<Page<Appointment>> {
+    return this.client.get<Page<Appointment>>(`http://localhost:8080/api/appointments/pages/doctor/${doctorId}?page=0&size=50`);
   }
 
   public saveAppointment(appointment: Appointment): Observable<Appointment> {
     console.log(appointment);
-    return this.client.post<Appointment>(`http://localhost:8080/api/appointments`, appointment, {
-      headers: {
-        "Authorization": `Bearer ${localStorage.getItem('token')}`
-      }
-    });
+    return this.client.post<Appointment>(`http://localhost:8080/api/appointments`, appointment);
   }
+
+  
+
 }
