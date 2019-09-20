@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'sioux-ambulanta';
+  loggedUser: string = localStorage.getItem("username");
+  token: string = localStorage.getItem("token");
 
+  constructor() { }
 
-  loggedUser:string = localStorage.getItem("username");
+  logout() {
+    localStorage.clear();
+    this.token = null;
+    this.loggedUser = null;
+  }
+
 }
