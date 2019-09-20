@@ -15,6 +15,7 @@ import { FirstNamePipe, PatientSearch } from './pipes/filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { AppointmentAddComponent } from './appointment-add/appointment-add.component';
 import { HomeComponent } from './home/home.component';
+import { CalendarDetailsComponent } from './calendar-details/calendar-details.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,8 @@ import { HomeComponent } from './home/home.component';
     FirstNamePipe,
     PatientSearch,
     AppointmentAddComponent,
-    HomeComponent
-
+    HomeComponent,
+    CalendarDetailsComponent
   ],
   imports: [
     BrowserModule,
