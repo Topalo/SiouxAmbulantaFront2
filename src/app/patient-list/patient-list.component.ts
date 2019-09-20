@@ -16,14 +16,8 @@ import { Patient } from '../model/patient';
 export class PatientListComponent implements OnInit {
   
   
-  items: Appointment[];
-<<<<<<< HEAD
-  item: Appointment;
-  itemsWithDate: Appointment[]=[];
-=======
+  items: Appointment[]; 
   
->>>>>>> 7bb38c14c07843ddedbd8c52efdc2e4139a1233d
-
   constructor(private service: AppointmentService, private servicePatient: PatientService) {
 
     this.loadAppointments();
@@ -37,15 +31,6 @@ export class PatientListComponent implements OnInit {
       }
     );
   }
-
-  // get sortData() {
-  //   return this.item.date.sort((a, b) => {
-  //     return <any>new Date(b.item.date) - <any>new Date(a.item.date);
-  //   });
-  // }
-
-
-
 
   ngOnInit() {
   }
