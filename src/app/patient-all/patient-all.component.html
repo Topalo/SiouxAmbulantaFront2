@@ -1,6 +1,7 @@
 <div class="container mid-margin-top">
   <div class="row justify-content-between">
-    <div class="input-group">
+    <div class="col-6">
+    <div class="input-group m-2">
       <div class="input-group-prepend">
         <span class="input-group-text">Search</span>
       </div>
@@ -9,8 +10,10 @@
       <input [(ngModel)]="searchLName" class="form-control" placeholder="last name goes here" type="text"
         aria-label="Last name" class="form-control">
     </div>
-    <button class="btn btn-primary m-2" routerLink="/patient-add">Add Patient</button>
   </div>
+  </div>
+  <div class="row">
+    <div class="col-9">
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -31,4 +34,28 @@
       </tr>
     </tbody>
   </table>
+</div>
+<div class="col-3">
+    <div class="row justify-content-center">
+        <form ngNativeValidate #ngForm="ngForm" (ngSubmit)="savePatient()">
+          <div class="form-group">
+          <label>First name</label>
+          <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter first name"
+          [(ngModel)]="item.firstname" required>
+      </div>
+      <div class="form-group">
+        <label>Last name</label>
+        <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter last name"
+          [(ngModel)]="item.lastname" required>
+      </div>
+      <div class="form-group">
+        <label>Jmbg</label>
+        <input type="text" class="form-control" name="jmbg" id="jmbg" placeholder="Enter jmbg" [(ngModel)]="item.jmbg"
+          required>
+      </div>
+          <button type="submit" class="btn btn-primary">Add Patient</button>
+        </form>
+      </div>
+</div>
+</div>
 </div>
