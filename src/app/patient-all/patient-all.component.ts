@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PatientService } from '../service/patient.service';
 import { Patient } from '../model/patient';
 import { AuthService } from '../service/auth.service';
@@ -12,6 +12,8 @@ import { Doctor } from '../model/doctor';
 export class PatientAllComponent implements OnInit {
 
   items: Patient[];
+  @Input("item")
+  item: Patient = { id: null, firstname: '', lastname: '', jmbg: '' };
 
   constructor(private service: PatientService, private authService: AuthService) {
     this.loadPatients();
@@ -36,5 +38,23 @@ export class PatientAllComponent implements OnInit {
       }
     );
 
+  }
+
+  public clearForm() {
+    this.item = { id: null, firstname: '', lastname: '', jmbg: '' };
+  }
+
+  public savePatient() {
+    this.service.savePatient(this.item).subscribe(
+      (data) => {
+        console.log("save patient");
+        console.log(data);
+      },
+      (error) => {
+        console.log("save patient error");
+        console.log(error);
+      }
+    );
+    this.clearForm();
   }
 }
